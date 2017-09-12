@@ -18,7 +18,7 @@ angular.module('redqueenUiApp')
       var deferred = $q.defer();
 
       $http.get('/api/logs').then(function(data) {
-        var logs = _.map(data.data, function(log) {
+        var logs = _.map(data.data.items, function(log) {
           return new Log(log);
         });
 
