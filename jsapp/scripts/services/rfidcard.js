@@ -20,7 +20,7 @@ angular.module('redqueenUiApp')
       var deferred = $q.defer();
 
       $http.get('/api/cards').then(function(data) {
-        var rfidCards = _.map(data.data, function(card) {
+        var rfidCards = _.map(data.data.items, function(card) {
           return new RfidCard(card);
         });
 

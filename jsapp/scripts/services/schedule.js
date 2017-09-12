@@ -20,7 +20,7 @@ angular.module('redqueenUiApp')
       var deferred = $q.defer();
 
       $http.get('/api/schedules').then(function(data) {
-        var schedules = _.map(data.data, function(card) {
+        var schedules = _.map(data.data.items, function(card) {
           return new Schedule(card);
         });
 
