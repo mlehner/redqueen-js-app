@@ -5,7 +5,7 @@
   <thead>
   <tr>
     <th>Name</th>
-    <th>Code</th>
+    <th colspan="2">Card</th>
     <th>Active?</th>
     <td>&nbsp;</td>
   </tr>
@@ -16,7 +16,8 @@
   </tr>
   <tr ng-repeat="rfidCard in rfidCards">
     <td>{{ rfidCard.name }}</td>
-    <td>{{ rfidCard.code }}</td>
+    <td>{{ rfidCard.facilityCode }}</td>
+    <td>{{ rfidCard.cardNumber }}</td>
     <td>
       <span class="label label-success" ng-show="rfidCard.isActive">Yes</span>
       <span class="label label-danger" ng-hide="rfidCard.isActive">No</span>
