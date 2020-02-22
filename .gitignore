@@ -11,12 +11,3 @@ dist
 .tmp
 .sass-cache
 bower_components
-web/404.html
-web/bower_components
-web/favicon.ico
-web/images
-web/index.html
-web/robots.txt
-web/scripts
-web/styles
-web/views
