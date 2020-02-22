@@ -3,7 +3,7 @@
     <tr>
       <th>Date/Time</th>
       <th>Name</th>
-      <th>Code</th>
+      <th colspan="2">Code</th>
       <th>Valid Pin?</th>
       <th>&nbsp;</th>
     </tr>
@@ -15,14 +15,15 @@
     <tr ng-repeat="log in logs">
       <td>{{ log.created_at }}</td>
       <td>{{ log.name }}</td>
-      <td>{{ log.code }}</td>
+      <td>{{ log.facilityCode }}</td>
+      <td>{{ log.cardNumber }}</td>
       <td>
         <span class="label label-success" ng-show="log.validPin">Yes</span>
         <span class="label label-danger" ng-hide="log.validPin">No</span>
       </td>
       <td>
         <div class="btn-group">
-          <a class="btn btn-primary" ng-show="!log.name" ng-href="#/rfidcards/new?code={{ log.code }}">Add</a>
+          <a class="btn btn-primary" ng-show="!log.name" ng-href="#/rfidcards/new?facilityCode={{ log.facilityCode }}&cardNumber={{ log.cardNumber }}">Add</a>
         </div>
       </td>
     </tr>

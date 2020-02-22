@@ -65,7 +65,8 @@ angular.module('redqueenUiApp')
         method = 'POST';
 
         data.pin = self.pin;
-        data.code = self.code;
+        data.facilityCode = self.facilityCode;
+        data.cardNumber = self.cardNumber;
       } else {
         url = '/api/cards/' + self.id;
         method = 'PUT';

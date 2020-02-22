@@ -13,8 +13,12 @@ angular.module('redqueenUiApp')
 
     $scope.schedules = [];
 
-    if (angular.isDefined($routeParams.code)) {
-      $scope.rfidCard.code = $routeParams.code;
+    if (angular.isDefined($routeParams.facilityCode)) {
+      $scope.rfidCard.facilityCode = $routeParams.facilityCode;
+    }
+
+    if (angular.isDefined($routeParams.cardNumber)) {
+      $scope.rfidCard.cardNumber = $routeParams.cardNumber;
     }
 
     ScheduleResource.all().then(function(data) {
