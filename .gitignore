@@ -1,13 +1,4 @@
-bin/setuart2
-htpasswd
-app/cache/
-data/
-*.swp
-service/log/main
-service/**/service
-vendor/
 node_modules
-dist
 .tmp
 .sass-cache
 bower_components
