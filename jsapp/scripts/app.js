@@ -50,4 +50,24 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .config(function ($httpProvider) {
+    $httpProvider.interceptors.push(function ($q) {
+      return {
+        'request': function (config) {
+          // Cloudflare looks for this header to return 401 instead of 302
+          config.headers['X-Requested-With'] = 'XMLHttpRequest';
+          return config;
+        },
+        'responseError': function (response) {
+          if (response.status === 401) {
+            // if API responds with 401, reload the whole page to login again
+            window.location.reload();
+            return;
+          }
+
+          return $q.reject(response);
+        },
+      };
+    });
   });
