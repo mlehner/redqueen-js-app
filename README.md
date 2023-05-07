@@ -2,11 +2,8 @@
 # Install compass
 ## gem install compass
 
-# Run npm
-## npm install
-
-# Run bower
-## bower install
+# Run yarn
+## yarn
 
 # Run grunt
-## grunt build
+## yarn exec grunt build
