@@ -2,8 +2,8 @@ node_modules
 .tmp
 .sass-cache
 bower_components
-.pnp.*
 .yarn/*
+!.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
