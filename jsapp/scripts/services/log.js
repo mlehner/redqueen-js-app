@@ -15,19 +15,19 @@ angular.module('redqueenUiApp')
     }
 
     Log.all = function LogResourceAll() {
-      var deferred = $q.defer();
-
-      $http.get('/api/logs').then(function(data) {
-        var logs = _.map(data.data.items, function(log) {
+      return $http.get('/api/logs').then(function(data) {
+        return _.map(data.data.items, function(log) {
           return new Log(log);
         });
-
-        deferred.resolve(logs);
-      }, function() {
-        deferred.reject();
       });
+    };
 
-      return deferred.promise;
+    Log.findSince = function LogResourceFindSince(since) {
+      return $http.get('/api/logs', { params: { since: since } }).then(function (data) {
+        return _.map(data.data.items, function (log) {
+          return new Log(log);
+        });
+      });
     };
 
     return Log;
