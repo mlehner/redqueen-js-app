@@ -50,7 +50,6 @@ module.exports = function (grunt) {
             '.tmp',
             '<%= yeoman.dist %>/{,*/}*',
             '!<%= yeoman.dist %>/.git*',
-            '!<%= yeoman.dist %>/index.php',
             '!<%= yeoman.dist %>/.htaccess'
           ]
         }]
@@ -78,33 +77,9 @@ module.exports = function (grunt) {
         src: ['<%= yeoman.app %>/index.html'],
         ignorePath:  /\.\.\//
       },
-      sass: {
-        src: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+      css: {
+        src: ['<%= yeoman.app %>/styles/{,*/}*.css'],
         ignorePath: /(\.\.\/){1,2}bower_components\//
-      }
-    },
-
-    // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
-      options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: './bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
-      },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        }
       }
     },
 
@@ -189,11 +164,9 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.{ico,png,txt}',
-            '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
-            'fonts/*'
+            'styles/*.css',
           ]
         }, {
           expand: true,
@@ -202,8 +175,8 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          cwd: 'bower_components/bootstrap/dist',
+          src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
         }]
       },
@@ -214,20 +187,12 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
-
-    // Run some tasks in parallel to speed up the build process
-    concurrent: {
-      dist: [
-        'compass:dist',
-      ]
-    },
   });
 
   grunt.registerTask('build', [
     'clean:dist',
     'wiredep',
     'useminPrepare',
-    'concurrent:dist',
     'autoprefixer',
     'concat',
     'ngAnnotate',
