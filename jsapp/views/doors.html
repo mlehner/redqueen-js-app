@@ -1,0 +1,25 @@
+<div class="btn-group pull-right">
+  <a href="#/doors/new" class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i> New</a>
+</div>
+<table class="table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <td>&nbsp;</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-show="(doors.length) == 0">
+    <td colspan="4">No Doors added.</td>
+  </tr>
+  <tr ng-repeat="door in doors">
+    <td>{{ door.name }}</td>
+    <td>{{ door.identifier }}</td>
+    <td>
+      <div class="btn-group">
+        <a class="btn btn-default" ng-click="edit(door)">Edit</a>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>

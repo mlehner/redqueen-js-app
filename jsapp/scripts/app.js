@@ -42,6 +42,18 @@ angular
         templateUrl: 'views/schedules/form.html',
         controller: 'ScheduleEditCtrl'
       })
+      .when('/doors', {
+        templateUrl: 'views/doors.html',
+        controller: 'DoorsCtrl'
+      })
+      .when('/doors/new', {
+        templateUrl: 'views/doors/form.html',
+        controller: 'DoorNewCtrl'
+      })
+      .when('/doors/:id/edit', {
+        templateUrl: 'views/doors/form.html',
+        controller: 'DoorEditCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
