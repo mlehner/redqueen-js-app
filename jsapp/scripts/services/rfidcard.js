@@ -93,20 +93,5 @@ angular.module('redqueenUiApp')
       return deferred.promise;
     };
 
-    //RfidCard.prototype.$remove = function RfidCardRemove() {
-    //  var deferred = $q.defer();
-    //  var self = this;
-    //
-    //  if (!self.$isNew) {
-    //    $http.delete('/api/cards/' + self.id).then(function() {
-    //      deferred.resolve();
-    //    }, function() {
-    //      deferred.reject();
-    //    });
-    //  }
-    //
-    //  return deferred.promise;
-    //};
-
     return RfidCard;
   }]);
