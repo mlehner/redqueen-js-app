@@ -3194,6 +3194,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jquery@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "jquery@npm:3.7.1"
+  checksum: 4370b8139d6ae82867eb6f7f21d1edccf1d1bdf41c0840920ea80d366c2cd5dbe1ceebb110ee9772aa839b04400faa1572c5c560b507c688ed7b61cea26c0e27
+  languageName: node
+  linkType: hard
+
 "js-yaml@npm:^3.13.1, js-yaml@npm:~3.14.0":
   version: 3.14.1
   resolution: "js-yaml@npm:3.14.1"
@@ -4492,6 +4499,7 @@ __metadata:
     grunt-newer: ^0.7.0
     grunt-svgmin: ^6.0.0
     grunt-usemin: ^3.1.1
+    jquery: ^3.7.1
     jshint-stylish: ^0.2.0
     load-grunt-tasks: ^5.1.0
     time-grunt: ^0.3.1

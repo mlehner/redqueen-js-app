@@ -5,7 +5,8 @@
     "@bower_components/angular": "angular/bower-angular#1.2.32",
     "@bower_components/angular-route": "angular/bower-angular-route#~1.2.0",
     "@bower_components/underscore": "jashkenas/underscore#~1.7.0",
-    "bootstrap": "3"
+    "bootstrap": "3",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "grunt": "^1.6.1",
