@@ -66,7 +66,11 @@ angular.module('redqueenUiApp')
         sat: self.sat === true,
         sun: self.sun === true,
         startTime: fixTime(self.startTime),
-        endTime: fixTime(self.endTime)
+        endTime: fixTime(self.endTime),
+        authenticationMode: self.authenticationMode,
+        doors: _.map(self.doors, function(d) {
+          return { 'id': d.id };
+        })
       };
 
       if (self.$isNew) {

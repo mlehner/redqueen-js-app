@@ -31,11 +31,27 @@
   </div>
   <div class="form-group">
     <label for="schedule_start_time">Start Time</label>
-    <input type="time" class="form-control" id="schedule_start_time" ng-model="schedule.startTime" name="start_time">
+    <input type="time" class="form-control" id="schedule_start_time" ng-model="schedule.startTime" step="1" name="start_time">
   </div>
   <div class="form-group">
     <label for="schedule_end_time">End Time</label>
-    <input type="time" class="form-control" id="schedule_end_time" ng-model="schedule.endTime" name="end_time">
+    <input type="time" class="form-control" id="schedule_end_time" ng-model="schedule.endTime" step="1" name="end_time">
+  </div>
+  <div class="form-group">
+    <label>Auth. Mode</label>
+    <div class="radio">
+      <label class="radio-inline">
+        <input type="radio" name="authenticationMode" id="schedule_auth_mode_card_pin" value="card_pin" ng-model="schedule.authenticationMode"> Card & PIN
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="authenticationMode" id="schedule_auth_mode_card" value="card" ng-model="schedule.authenticationMode"> Card Only
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="schedule_doors">Doors</label>
+    <select id="schedule_doors" class="form-control" multiple="multiple" name="doors[]" ng-model="schedule.doors" ng-options="door.name for door in doors track by door.id">
+    </select>
   </div>
   <div class="form-group">
     <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
