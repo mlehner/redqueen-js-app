@@ -56,7 +56,7 @@ angular.module('redqueenUiApp')
         name: self.name,
         isActive: self.isActive,
         schedules: _.map(self.schedules, function(s) {
-          return { 'id': s };
+          return { 'id': s.id };
         })
       };
 
