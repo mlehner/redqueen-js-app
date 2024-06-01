@@ -16,7 +16,7 @@ angular.module('redqueenUiApp')
     });
 
     $scope.edit = function DoorsCtrlEdit(door) {
-      $location.path('/door/' + door.id + '/edit');
+      $location.path('/doors/' + door.id + '/edit');
     };
 
   }]);
