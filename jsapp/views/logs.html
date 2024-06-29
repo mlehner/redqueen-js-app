@@ -3,6 +3,7 @@
     <tr>
       <th>Date/Time</th>
       <th>Name</th>
+      <th>Door</th>
       <th colspan="2">Code</th>
       <th>Valid Pin?</th>
       <th>&nbsp;</th>
@@ -15,6 +16,7 @@
     <tr ng-repeat="log in logs">
       <td>{{ log.createdAt | date:'medium' }}</td>
       <td>{{ log.name }}</td>
+      <td>{{ log.door.name }}</td>
       <td>{{ log.facilityCode }}</td>
       <td>{{ log.cardNumber }}</td>
       <td>
