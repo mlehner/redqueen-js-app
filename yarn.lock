@@ -103,6 +103,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"angular-sanitize@npm:1.2.32":
+  version: 1.2.32
+  resolution: "angular-sanitize@npm:1.2.32"
+  checksum: 0ae03a58db65e009a7cd5471652dfa7a46e15587941034b2290d02970d77f1b4096e7c3b8c3087612fced88c45608a4bd0f51ee0eaed6bbd220c6e71dd49a6d2
+  languageName: node
+  linkType: hard
+
 "ansi-regex@npm:^2.0.0":
   version: 2.1.1
   resolution: "ansi-regex@npm:2.1.1"
@@ -4351,6 +4358,7 @@ __metadata:
     "@bower_components/angular": "angular/bower-angular#1.2.32"
     "@bower_components/angular-route": "angular/bower-angular-route#~1.2.0"
     "@bower_components/underscore": "jashkenas/underscore#~1.7.0"
+    angular-sanitize: 1.2.32
     bootstrap: 3
     grunt: ^1.6.1
     grunt-autoprefixer: ^0.7.3
@@ -4371,6 +4379,7 @@ __metadata:
     jshint-stylish: ^0.2.0
     load-grunt-tasks: ^5.1.0
     time-grunt: ^0.3.1
+    ui-select: ^0.19.8
   languageName: unknown
   linkType: soft
 
@@ -5231,6 +5240,13 @@ __metadata:
   bin:
     uglifyjs: bin/uglifyjs
   checksum: 7b3897df38b6fc7d7d9f4dcd658599d81aa2b1fb0d074829dd4e5290f7318dbca1f4af2f45acb833b95b1fe0ed4698662ab61b87e94328eb4c0a0d3435baf924
+  languageName: node
+  linkType: hard
+
+"ui-select@npm:^0.19.8":
+  version: 0.19.8
+  resolution: "ui-select@npm:0.19.8"
+  checksum: 1f385102905fb55249bd3005d5fe64a1766b7d7419523afd760154f0876c2ecffee18f98d556cc6da932eef5612636a291adc96b3f42c8e1b7ca580b3befaee2
   languageName: node
   linkType: hard
 
