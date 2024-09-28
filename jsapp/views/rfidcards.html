@@ -16,10 +16,10 @@
   </tr>
   <tr ng-repeat="rfidCard in rfidCards">
     <td>
-      {{ rfidCard.name }}
+      <span class="lead">{{ rfidCard.name }}</span>
       <br />
       <span class="schedule-list">
-        <span class="label label-default" ng-repeat-start="schedule in rfidCard.schedules" ng-bind="schedule.name">{{ schedule.name }}</span> <span ng-repeat-end></span>
+        <span class="label" ng-repeat-start="schedule in rfidCard.schedules" ng-bind="schedule.name">{{ schedule.name }}</span> <span ng-repeat-end></span>
       </span>
     </td>
     <td>{{ rfidCard.facilityCode }}</td>
