@@ -10,7 +10,9 @@
  */
 angular
   .module('redqueenUiApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngSanitize',
+    'ui.select',
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -261,17 +263,27 @@ angular.module('redqueenUiApp')
  * Controller of the redqueenUiApp
  */
 angular.module('redqueenUiApp')
-  .controller('RfidCardEditCtrl', [ '$scope', '$location', '$routeParams', 'RfidCard', 'Schedule', function ($scope, $location, $routeParams, RfidCardResource, ScheduleResource) {
+  .controller('RfidCardEditCtrl', [ '$scope', '$q', '$location', '$routeParams', 'RfidCard', 'Schedule', function ($scope, $q, $location, $routeParams, RfidCardResource, ScheduleResource) {
     $scope.rfidCard = null;
 
     $scope.schedules = [];
 
-    RfidCardResource.find($routeParams.id).then(function(data) {
-      $scope.rfidCard = data;
-    });
+    $q.all([RfidCardResource.find($routeParams.id), ScheduleResource.all()]).then(function (results) {
+      let [card, schedules] = results;
 
-    ScheduleResource.all().then(function(data) {
-      $scope.schedules = data;
+      $scope.schedules = schedules;
+
+      let schedulesById = {};
+
+      for (let schedule of schedules) {
+        schedulesById[schedule.id] = schedule;
+      }
+
+      card.schedules = card.schedules.map(function (schedule) {
+        return schedulesById[schedule.id];
+      });
+
+      $scope.rfidCard = card;
     });
 
     $scope.submit = function() {
