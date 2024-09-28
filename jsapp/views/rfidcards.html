@@ -15,7 +15,13 @@
     <td colspan="4">No RFID Cards added.</td>
   </tr>
   <tr ng-repeat="rfidCard in rfidCards">
-    <td>{{ rfidCard.name }}</td>
+    <td>
+      {{ rfidCard.name }}
+      <br />
+      <span class="schedule-list">
+        <span class="label label-default" ng-repeat-start="schedule in rfidCard.schedules" ng-bind="schedule.name">{{ schedule.name }}</span> <span ng-repeat-end></span>
+      </span>
+    </td>
     <td>{{ rfidCard.facilityCode }}</td>
     <td>{{ rfidCard.cardNumber }}</td>
     <td>
