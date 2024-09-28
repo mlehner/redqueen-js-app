@@ -10,7 +10,6 @@
 angular.module('redqueenUiApp')
   .controller('RfidCardsCtrl', [ '$scope', '$location', 'RfidCard', function ($scope, $location, RfidCardResource) {
     $scope.rfidCards = [];
-    $scope.activeMenu = 'cards';
 
     RfidCardResource.all().then(function(data) {
       $scope.rfidCards = data;

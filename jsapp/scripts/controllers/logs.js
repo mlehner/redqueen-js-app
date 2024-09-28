@@ -10,7 +10,6 @@
 angular.module('redqueenUiApp')
   .controller('LogsCtrl', [ '$scope', 'Log', function ($scope, LogResource) {
     $scope.logs = [];
-    $scope.activeMenu = 'logs';
     $scope.lastCreatedAt = null;
 
     LogResource.all().then(function(data) {
