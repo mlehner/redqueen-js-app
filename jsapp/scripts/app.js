@@ -10,7 +10,9 @@
  */
 angular
   .module('redqueenUiApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngSanitize',
+    'ui.select',
   ])
   .config(function ($routeProvider) {
     $routeProvider

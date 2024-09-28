@@ -29,9 +29,13 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="card_schedules">Schedules</label>
-    <select id="card_schedules" class="form-control" multiple="multiple" name="schedules[]" ng-model="rfidCard.schedules" ng-options="schedule.name for schedule in schedules track by schedule.id">
-    </select>
+    <label>Schedules</label>
+    <ui-select multiple ng-model="rfidCard.schedules" theme="bootstrap" close-on-select="false" style="width: 300px;" title="Pick some schedules">
+      <ui-select-match placeholder="Select schedules...">{{$item.name}}</ui-select-match>
+      <ui-select-choices repeat="schedule in schedules track by schedule.id | filter: {name: $select.search}">
+        {{schedule.name}}
+      </ui-select-choices>
+    </ui-select>
   </div>
   <div class="form-group">
     <button type="submit" class="btn btn-primary" ng-click="submit()">Submit</button>
