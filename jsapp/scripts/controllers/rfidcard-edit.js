@@ -10,6 +10,7 @@
 angular.module('redqueenUiApp')
   .controller('RfidCardEditCtrl', [ '$scope', '$q', '$location', '$routeParams', 'RfidCard', 'Schedule', function ($scope, $q, $location, $routeParams, RfidCardResource, ScheduleResource) {
     $scope.rfidCard = null;
+    $scope.submitting = false;
 
     $scope.schedules = [];
 
@@ -32,8 +33,11 @@ angular.module('redqueenUiApp')
     });
 
     $scope.submit = function() {
+      $scope.submitting = true;
       $scope.rfidCard.$save().then(function() {
         $location.path('/rfidcards');
+      }).finally(function() {
+        $scope.submitting = false;
       });
     };
   }]);
