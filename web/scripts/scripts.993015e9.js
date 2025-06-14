@@ -129,6 +129,10 @@ angular.module('redqueenUiApp')
       return deferred.promise;
     };
 
+    RfidCard.delete = function RfidCardResourceDelete(id) {
+      return $http.delete('/api/cards/' + id);
+    };
+
     RfidCard.prototype.$save = function RfidCardSave() {
       var deferred = $q.defer();
       var self = this;
@@ -217,6 +221,13 @@ angular.module('redqueenUiApp')
       $location.path('/rfidcards/' + rfidCard.id + '/edit');
     };
 
+    $scope.remove = function RfidCardsCtrlRemove(rfidCard) {
+      if (window.confirm(`Are you sure you want to delete "${rfidCard.name}"?`)) {
+        RfidCardResource.remove(rfidCard.id).then(function () {
+          $scope.rfidCards.splice($scope.rfidCards.indexOf(rfidCard), 1);
+        });
+      }
+    };
   }]);
 
 'use strict';
