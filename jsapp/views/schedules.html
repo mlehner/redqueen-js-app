@@ -4,7 +4,10 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Name</th>
+    <th colspan="10">Name</th>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
     <th>Mon</th>
     <th>Tue</th>
     <th>Wed</th>
@@ -20,37 +23,38 @@
   </thead>
   <tbody>
   <tr ng-show="(schedules.length) == 0">
-    <td colspan="4">No schedules added.</td>
+    <td colspan="11">No schedules added.</td>
   </tr>
-  <tr ng-repeat="schedule in schedules">
-    <td>{{ schedule.name }}</td>
+  <tr ng-repeat-start="schedule in schedules">
+    <td colspan="10">
+      <span class="lead">{{ schedule.name }}</span>
+      <br />
+      <span class="door-list">
+        <span class="label" ng-repeat-start="door in schedule.doors">{{ door.name }}</span> <span ng-repeat-end></span>
+      </span>
+    </td>
+  </tr>
+  <tr ng-repeat-end>
     <td>
-      <span class="label label-success" ng-show="schedule.mon">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.mon">No</span>
+      <span class="label" ng-class="schedule.mon ? 'label-success' : 'label-danger'">Mon</span>
     </td>
     <td>
-      <span class="label label-success" ng-show="schedule.tue">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.tue">No</span>
+      <span class="label" ng-class="schedule.tue ? 'label-success' : 'label-danger'">Tue</span>
     </td>
     <td>
-      <span class="label label-success" ng-show="schedule.wed">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.wed">No</span>
+      <span class="label" ng-class="schedule.wed ? 'label-success' : 'label-danger'">Wed</span>
     </td>
     <td>
-      <span class="label label-success" ng-show="schedule.thu">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.thu">No</span>
+      <span class="label" ng-class="schedule.thu ? 'label-success' : 'label-danger'">Thu</span>
     </td>
     <td>
-      <span class="label label-success" ng-show="schedule.fri">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.fri">No</span>
+      <span class="label" ng-class="schedule.fri ? 'label-success' : 'label-danger'">Fri</span>
     </td>
     <td>
-      <span class="label label-success" ng-show="schedule.sat">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.sat">No</span>
+      <span class="label" ng-class="schedule.sat ? 'label-success' : 'label-danger'">Sat</span>
     </td>
     <td>
-      <span class="label label-success" ng-show="schedule.sun">Yes</span>
-      <span class="label label-danger" ng-hide="schedule.sun">No</span>
+      <span class="label" ng-class="schedule.sun ? 'label-success' : 'label-danger'">Sun</span>
     </td>
     <td>{{ schedule.startTime }}</td>
     <td>{{ schedule.endTime }}</td>

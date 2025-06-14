@@ -42,11 +42,11 @@ body {
   margin: 30px 0;
 }
 
-.schedule-list {
+.schedule-list, .door-list {
   display: inline-block;
 }
 
-.schedule-list .label {
+.schedule-list .label, .door-list .label {
   background-color: #ddd;
   color: #555;
 }
