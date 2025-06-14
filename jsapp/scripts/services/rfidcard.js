@@ -46,6 +46,10 @@ angular.module('redqueenUiApp')
       return deferred.promise;
     };
 
+    RfidCard.delete = function RfidCardResourceDelete(id) {
+      return $http.delete('/api/cards/' + id);
+    };
+
     RfidCard.prototype.$save = function RfidCardSave() {
       var deferred = $q.defer();
       var self = this;
