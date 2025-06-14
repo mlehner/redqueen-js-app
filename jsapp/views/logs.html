@@ -24,8 +24,10 @@
         <span class="label label-danger" ng-hide="log.validPin">No</span>
       </td>
       <td>
-        <div class="btn-group">
-          <a class="btn btn-primary" ng-show="!log.name" ng-href="#/rfidcards/new?facilityCode={{ log.facilityCode }}&cardNumber={{ log.cardNumber }}">Add</a>
+        <div class="btn-group btn-group-sm">
+          <a class="btn btn-primary" ng-show="!log.name" ng-href="#/rfidcards/new?facilityCode={{ log.facilityCode }}&cardNumber={{ log.cardNumber }}">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
+          </a>
         </div>
       </td>
     </tr>
