@@ -51,6 +51,12 @@ body {
   color: #555;
 }
 
+td.actions {
+  text-align: right;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

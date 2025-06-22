@@ -23,7 +23,7 @@
         <span class="label label-success" ng-show="log.validPin">Yes</span>
         <span class="label label-danger" ng-hide="log.validPin">No</span>
       </td>
-      <td>
+      <td class="actions">
         <div class="btn-group btn-group-sm">
           <a class="btn btn-primary" ng-show="!log.name" ng-href="#/rfidcards/new?facilityCode={{ log.facilityCode }}&cardNumber={{ log.cardNumber }}">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
